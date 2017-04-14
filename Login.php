@@ -1,5 +1,9 @@
 <?php?>
 <html>
+    <head>
+        <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="styles/bootstrap/css/animate.css">
+    </head>
 <body> 
   <h2> This is the login page</h2> 
   <form method = "post" action="index.php"> 
