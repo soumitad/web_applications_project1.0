@@ -20,6 +20,7 @@ function addTodoItem($user_id, $todo_text) {
   $statement->closeCursor(); 
   return true; 
 } 
+?>
                                                      
-
+    
 
