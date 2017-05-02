@@ -1,7 +1,5 @@
 <?php include('styleHeader.php') ?>
-<?php 
-$firstname = $lastname = $email = $gender = $password = $confpassword = "";
-?>
+<?php include('registerValidation.php') ?>
 
 <body> 
     
@@ -27,15 +25,27 @@ $firstname = $lastname = $email = $gender = $password = $confpassword = "";
                                     <input type="hidden" name="action" value="register">
                                     <div class="form-group">
                                         <input type="text" name="firstname" id="firstname" tabindex="1" class="form-control" placeholder="First Name" value="">
-                                        <span class="error"><?php echo $firstname;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $firstnameErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="lastname" id="lastname" tabindex="1" class="form-control" placeholder="Last Name" value="">
-                                        <span class="error"><?php echo $lastname;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $lastnameErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-                                        <span class="error"><?php echo $email;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $emailErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="phonenum" id="phonenum" tabindex="2" class="form-control" placeholder="Phone Number">
@@ -45,15 +55,27 @@ $firstname = $lastname = $email = $gender = $password = $confpassword = "";
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="gender" id="gender" tabindex="2" class="form-control" placeholder="Gender">
-                                        <span class="error"><?php echo $gender;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $genderErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-                                        <span class="error"><?php echo $password;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $passwordErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="confpassword" id="confpassword" tabindex="2" class="form-control" placeholder="Confirm Password">
-                                        <span class="error"><?php echo $confpassword;?></span>
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $confpasswordErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">

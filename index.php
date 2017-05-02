@@ -30,25 +30,25 @@ if($action == 'show_login_page')
 }else if ($action=='register') { 
   //echo "We want create a new account"; 
    //echo "test commit"
-    $firstname = $lastname = $email = $gender = $password = $confpassword = "";
+    $firstnameErr = $lastnameErr = $emailErr = $genderErr = $passwordErr = $confpasswordErr = "";
    
   if(empty($_POST['firstname'])){
-      $firstname = "First Name is missing";
+      $firstnameErr = "First Name is missing";
   }
   if(empty($_POST['lastname'])){
-      $lastname = "Last Name is missing";
+      $lastnameErr = "Last Name is missing";
   }
-  if(empty($_POST('email'))){
-      $email = "Email address will serve as your username and is mandatory";
+  if(empty($_POST['email'])){
+      $emailErr = "Email address will serve as your username and is mandatory";
   }
-  if(empty($_POST('gender'))){
-      $gender = "Gender is missing";
+  if(empty($_POST['gender'])){
+      $genderErr = "Gender is missing";
   }
-  if(empty($_POST('password'))){
-      $password = "Password is missing";
+  if(empty($_POST['password'])){
+      $passwordErr = "Password is missing";
   }
-  if(empty($_POST('confpassword'))){
-      $confpassword = "Confirm Password is missing";
+  if(empty($_POST['confpassword'])){
+      $confpasswordErr = "Confirm Password is missing";
   }
   include('Register.php');
   /*if(isset($name)) { 
