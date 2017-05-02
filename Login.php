@@ -1,10 +1,5 @@
-<?php?>
-<html>
-    <head>
-        <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="styles/bootstrap/css/animate.css">
-        <script  type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
-    </head>
+<?php include('styleHeader.php') ?>
+
 <body> 
   <div class="container">
     	<div class="row">
@@ -16,7 +11,7 @@
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
 							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
+								<a href="Register.php">Sign Up</a>
 							</div>
 						</div>
 						<hr>
@@ -25,6 +20,7 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<form id="login-form" action="index.php" method="post" role="form" style="display: block;">
+                                                                    <input type="hidden" name="action" value="login">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
@@ -52,27 +48,7 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="Register.php" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-											</div>
-										</div>
-									</div>
-								</form>
+								
 							</div>
 						</div>
 					</div>
@@ -81,4 +57,5 @@
 		</div>
 	</div> 
 </body> 
-</html> 
+ 
+<?php include('styleFooter.php') ?>

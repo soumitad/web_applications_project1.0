@@ -1,25 +1,30 @@
 <?php
- 
- function deleteTodoItem($user_id, $todo_id) { 
-  global $db; 
-  $query = 'DELETE FROM todos WHERE id = :todo_id and user_id = :user_id'; 
-  $statement = $db->prepare($query); 
-  $statement->bindValue(':user_id', $user_id); 
-  $statement->bindValue(':todo_text', $todo_id); 
-  $statement->execute(); 
-  $statement->closeCursor(); 
-} 
 
-function addTodoItem($user_id, $todo_text) { 
-  global $db; 
-  $query = "INSERT INTO todos(user_id, todo_item) values (:user_id, :todo_text)"; 
+function isUserValid($user_id, $pass){
+   global $db; 
+  $query = "SELECT 1 AS ID FROM users where user_id=:user_id and BINARY passwordHash=:pass"; 
   $statement = $db->prepare($query); 
   $statement->bindValue(':user_id', $user_id); 
-  $statement->bindValue(':todo_text', $todo_text); 
-  $statement->execute(); 
-  $statement->closeCursor(); 
-  return true; 
-} 
+  $statement->bindValue(':pass', $pass);
+  $statement->execute();
+  $userExists = $statement->fetch();
+  $statement->closeCursor();
+ 
+  if($userExists['ID'] == 1){
+      return true;
+  }else{
+      return false;
+  }  
+  
+}
+
+function display_error($error, 
+                       $tag = 'i', 
+                       $class = '2' ) {
+    $opentag  = '<'  . $tag . ' class="' . $class . '">';
+    $closetag = '</' . $tag . '>';
+    echo $opentag . $error . $closetag;
+}
 ?>
                                                      
     
