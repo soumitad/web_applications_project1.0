@@ -29,6 +29,7 @@ if($action == 'show_login_page')
   } 
 }else if ($action=='register') { 
   //echo "We want create a new account"; 
+   //echo "test commit"
     $firstname = $lastname = $email = $gender = $password = $confpassword = "";
    
   if(empty($_POST['firstname'])){
