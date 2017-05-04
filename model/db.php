@@ -19,6 +19,17 @@ function isUserValid($user_id, $pass){
   
 }
 
+function getUserDetails($email){
+    global $db; 
+  $query = "SELECT * FROM user_profile where username=:user_id"; 
+  $statement = $db->prepare($query); 
+  $statement->bindValue(':user_id', $email); 
+  $statement->execute();
+  $user = $statement->fetch();
+  $statement->closeCursor();
+  return $user;
+}
+
 function display_error($error, 
                        $tag = 'i', 
                        $class = '2' ) {

@@ -24,7 +24,9 @@ if($action == 'show_login_page')
   if($suc == true) 
   { 
     //$result = getTodoItems($_COOKIE['my_id']); 
-      display_error('User Exists');
+     $userDetails = getUserDetails($username);
+     $firstname = $userDetails['first_name'];
+     $lastname = $userDetails['last_name'];
     include('todoView.php'); 
   }else{ 
     //header("Location: badInfo.php"); 

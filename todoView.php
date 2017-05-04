@@ -10,7 +10,7 @@
         </div> -->
        <div class="col-lg-12">
            <div class="row">
-               <h1>Voila!!! Hello World</h1>
+               <h1>Voila!!! Hello <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1>
                <hr>
            </div> 
            <hr/>
