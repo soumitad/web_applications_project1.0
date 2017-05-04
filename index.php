@@ -19,11 +19,13 @@ if($action == 'show_login_page')
   $password = $_POST['password']; 
   display_error($username);
   display_error($password);
+  display_error(sha1($username . $password));
   $suc = isUserValid($username,$password); 
   if($suc == true) 
   { 
     //$result = getTodoItems($_COOKIE['my_id']); 
-    include ('index23.php'); 
+      display_error('User Exists');
+    include('todoView.php'); 
   }else{ 
     //header("Location: badInfo.php"); 
   } 
