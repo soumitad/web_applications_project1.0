@@ -1,7 +1,7 @@
 <?php 
 /*Controller*/ 
-require('dbConnection.php'); 
-require('db.php');
+require('./model/dbConnection.php'); 
+require('./model/db.php');
 //include('Login.php'); 
 
 $action = filter_input(INPUT_POST, 'action'); 
@@ -27,7 +27,7 @@ if($action == 'show_login_page')
   }else{ 
     //header("Location: badInfo.php"); 
   } 
-}else if ($action=='register') { 
+}/*else if ($action=='register') { 
   //echo "We want create a new account"; 
    //echo "test commit"
     $firstnameErr = $lastnameErr = $emailErr = $genderErr = $passwordErr = $confpasswordErr = "";
@@ -62,7 +62,7 @@ if($action == 'show_login_page')
     } 
  
   }*/ 
-}/* else if ($action == 'add') { 
+/*} else if ($action == 'add') { 
   if (isset($_POST['description']) and $_POST['description'] != '') { 
     addTodoItem($_COOKIE['my_id'], $_POST['description']); 
   } 
