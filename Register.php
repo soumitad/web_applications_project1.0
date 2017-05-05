@@ -1,4 +1,4 @@
-<?php include('styleHeader.php') ?>
+<?php include('view/styleHeader.php') ?>
 <?php include('registerValidation.php') ?>
 
 <body> 
@@ -94,4 +94,4 @@
 </form> 
 </body> 
 
-<?php include('styleFooter.php') ?>
+<?php include('view/styleFooter.php') ?>

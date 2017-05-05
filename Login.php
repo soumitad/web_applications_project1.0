@@ -1,4 +1,4 @@
-<?php include('styleHeader.php') ?>
+<?php include('view/styleHeader.php') ?>
 
 <body> 
   <div class="container">
@@ -58,4 +58,4 @@
 	</div> 
 </body> 
  
-<?php include('styleFooter.php') ?>
+<?php include('view/styleFooter.php') ?>

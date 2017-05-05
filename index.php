@@ -17,9 +17,6 @@ if($action == 'show_login_page')
    // include('index23.php');
   $username = $_POST['username']; 
   $password = $_POST['password']; 
-  display_error($username);
-  display_error($password);
-  display_error(sha1($username . $password));
   $suc = isUserValid($username,$password); 
   if($suc == true) 
   { 
@@ -27,7 +24,7 @@ if($action == 'show_login_page')
      $userDetails = getUserDetails($username);
      $firstname = $userDetails['first_name'];
      $lastname = $userDetails['last_name'];
-    include('todoView.php'); 
+    include('todo/todoView.php'); 
   }else{ 
     //header("Location: badInfo.php"); 
   } 
