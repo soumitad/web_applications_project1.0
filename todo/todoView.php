@@ -1,10 +1,8 @@
 <?php include('../view/styleHeader.php') ?>
 
 <?php 
-    require_once('../util/main.php');
-     $username = $_SESSION['userId'];
-     $firstname = $_SESSION['first_name'];
-     $lastname = $_SESSION['last_name'];
+    require('todo.php');
+     
 ?>
 <body> 
     <div class="container">
@@ -46,30 +44,17 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><a href="#" class="btn btn-success">Edit</a></td>
-                            <td><a href="#" class="btn btn-warning">Delete</a></td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><a href="#" class="btn btn-success">Edit</a></td>
-                            <td><a href="#" class="btn btn-warning">Delete</a></td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td><a href="#" class="btn btn-success">Edit</a></td>
-                            <td><a href="#" class="btn btn-warning">Delete</a></td>
-                          </tr>
+                            <?php foreach ($items as $item) : ?>
+                                <tr>
+                                    <td><?php echo $item['id'];?></td>
+                                    <td><?php echo $item['todo_item'];?></td>
+                                    <td><?php echo $item['date_created'];?></td>
+                                    <td><?php echo $item['date_due'];?></td>
+                                    <td><a href="#" class="btn btn-success">Edit</a></td>
+                                    <td><a href="#" class="btn btn-warning">Delete</a></td>
+                                </tr>    
+                            <?php endforeach; ?>
+                          
                         </tbody>
                       </table>
                 </div>

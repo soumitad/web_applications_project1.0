@@ -25,7 +25,7 @@ if($action == 'show_login_page')
      $userDetails = getUserDetails($username);
      $firstname = $userDetails['first_name'];
      $lastname = $userDetails['last_name'];
-     $_SESSION['userId'] = $userDetails;
+     $_SESSION['userId'] = $username;
      $_SESSION['first_name'] = $firstname;
      $_SESSION['last_name'] = $lastname;
      //include('todo/todoView.php'); 

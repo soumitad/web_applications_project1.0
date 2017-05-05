@@ -27,7 +27,7 @@ function addItem($email, $item, $duedate) {
 function getToDoItems($email) {
     global $db;
     
-     $query = "SELECT * FROM todos where username=:user_id"; 
+  $query = "SELECT * FROM todos where username=:user_id"; 
   try{   
   $statement = $db->prepare($query); 
   $statement->bindValue(':user_id', $email); 
