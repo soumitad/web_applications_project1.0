@@ -1,4 +1,5 @@
 <?php
+require_once('../util/main.php');
 require('../model/dbConnection.php');
 require('../model/addItem.php');
 require('../model/db.php');
@@ -22,7 +23,7 @@ if(isset($_POST['login-submit'])) {
     if($insertStatus != null) 
     {
         $items = getToDoItems($username);
-        include('../todo/todoView.php');
+        include('todoView.php');
     }
 }
 ?>

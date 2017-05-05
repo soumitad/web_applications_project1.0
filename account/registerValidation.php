@@ -1,6 +1,6 @@
 <?php // Initialize variables to null.
-require('./model/dbConnection.php');
-require('./model/registerDb.php');
+require('../model/dbConnection.php');
+require('../model/registerDb.php');
 $firstname =""; // Sender Name
 $lastname =""; 
 $email =""; // Sender's email ID

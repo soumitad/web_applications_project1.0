@@ -1,4 +1,4 @@
-<?php include('view/styleHeader.php') ?>
+<?php include('../view/styleHeader.php') ?>
 <?php $username = $_GET['userid']; ?>
 <body> 
   <div class="container">
@@ -12,7 +12,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="todo/todo.php" method="post" role="form" style="display: block;">
+								<form id="login-form" action="todo.php" method="post" role="form" style="display: block;">
                                                                     <input type="hidden" name="action" value="register">
                                                                     <input type="hidden" name="username" value="<?php echo $username;?>">
 									<div class="form-group">
@@ -41,4 +41,4 @@
 	</div> 
 </body> 
  
-<?php include('view/styleFooter.php') ?>
+<?php include('../view/styleFooter.php') ?>

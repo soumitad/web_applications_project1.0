@@ -1,4 +1,11 @@
-<?php include('view/styleHeader.php') ?>
+<?php include('../view/styleHeader.php') ?>
+
+<?php 
+    require_once('../util/main.php');
+     $username = $_SESSION['userId'];
+     $firstname = $_SESSION['first_name'];
+     $lastname = $_SESSION['last_name'];
+?>
 <body> 
     <div class="container">
        <!-- <div class="jumbotron">
@@ -18,7 +25,7 @@
        <div class="row">
            <div class="col-xs-6 col-md-4">
                
-               <a href="./addItem.php?userid=<?php echo $username;?>" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">+ Add a New Item</a>
+               <a href="addItem.php?userid=<?php echo $username;?>" class="btn btn-success">+ Add a New Item</a>
                   
            </div>
        </div>
@@ -136,4 +143,4 @@
     </div>
 </body>    
 
-<?php include('view/styleFooter.php') ?>
+<?php include('../view/styleFooter.php') ?>
