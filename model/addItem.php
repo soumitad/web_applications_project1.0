@@ -41,6 +41,23 @@ function getToDoItems($email) {
     }
 }
 
+function updateitem($id, $todoitem, $duedate, $status) {
+    global $db;
+    $query = 'UPDATE todos SET
+    todo_item = :todo_item,
+    date_due = :date_due,
+    status = :status,
+    WHERE id = :id';
+    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':todo_item', $todoitem);
+    $statement->bindValue(':date_due', $duedate);
+    $statement->bindValue(':status', $status);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+    $statement->closeCursor();
+    }
+
 function display_error_1($error, 
                        $tag = 'i', 
                        $class = '2' ) {

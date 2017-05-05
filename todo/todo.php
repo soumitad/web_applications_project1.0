@@ -14,6 +14,12 @@ if(!isset($action)){
     display_error($username);
    // <?php echo $username[0];
     $items = getToDoItems($username);
+}else if ($action == "update"){
+    $todo_item = $_POST['itemName'];
+    $date_due = $_POST['dueDate'];
+    $status = $_POST['status'];
+    $id = $_POST['id'];
+    updateitem($id,$todo_item,$date_due,$status);
 }
 if(isset($_POST['login-submit'])) {
     $item = $_POST['itemName'];
