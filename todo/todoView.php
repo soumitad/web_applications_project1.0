@@ -18,7 +18,7 @@
        <div class="row">
            <div class="col-xs-6 col-md-4">
                
-               <a href="./addItem.php" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">+ Add a New Item</a>
+               <a href="./addItem.php?userid=<?php echo $username;?>" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">+ Add a New Item</a>
                   
            </div>
        </div>

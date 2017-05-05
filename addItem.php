@@ -1,5 +1,5 @@
 <?php include('view/styleHeader.php') ?>
-
+<?php $username = $_GET['userid']; ?>
 <body> 
   <div class="container">
     	<div class="row">
@@ -13,12 +13,13 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<form id="login-form" action="todo/todo.php" method="post" role="form" style="display: block;">
-                                                                    <input type="hidden" name="action" value="addItem">
+                                                                    <input type="hidden" name="action" value="register">
+                                                                    <input type="hidden" name="username" value="<?php echo $username;?>">
 									<div class="form-group">
 										<input type="text" name="itemName" id="itemName" class="form-control" placeholder="Item Name" value="">
 									</div>
 									<div class="form-group">
-										<input type="text" name="dueDate" id="password" class="form-control" placeholder="Due Date">
+										<input type="date" name="dueDate" id="duedate" class="form-control" placeholder="Due Date" value="<?php echo date('Y-m-d'); ?>" >
 									</div>
 									
 									<div class="form-group">
