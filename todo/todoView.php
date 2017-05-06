@@ -1,8 +1,15 @@
 <?php include('../view/styleHeader.php') ?>
 
-<?php 
-    require('todo.php');
-     
+<?php
+    require_once('../util/main.php');
+    require_once('../model/dbConnection.php');
+    $action="add";
+    require_once('../model/addItem.php');
+    $username = $_SESSION['userId'];
+    $firstname = $_SESSION['first_name'];
+    $lastname = $_SESSION['last_name'];
+    //require('todo.php');
+     $items = getToDoItems($username);
 ?>
 <body> 
     <div class="container">
@@ -23,7 +30,7 @@
        <div class="row">
            <div class="col-xs-6 col-md-4">
                
-               <a href="addItem.php?userid=<?php echo $username;?>" class="btn btn-success">+ Add a New Item</a>
+               <a href="addEditItem.php?userid=<?php echo $username;?>&action=add" class="btn btn-success">+ Add a New Item</a>
                   
            </div>
        </div>
@@ -50,8 +57,8 @@
                                     <td><?php echo $item['todo_item'];?></td>
                                     <td><?php echo $item['date_created'];?></td>
                                     <td><?php echo $item['date_due'];?></td>
-                                    <td><a href="#" class="btn btn-success">Edit</a></td>
-                                    <td><a href="#" class="btn btn-warning">Delete</a></td>
+                                    <td><a href="addEditItem.php?action=update&id=<?php echo $item['id']?>" class="btn btn-success">Edit</a></td>
+                                    <td><a href="todo.php?action=delete&id=<?php echo $item['id']?>" class="btn btn-warning">Delete</a></td>
                                 </tr>    
                             <?php endforeach; ?>
                           

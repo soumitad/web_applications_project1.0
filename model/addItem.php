@@ -1,6 +1,6 @@
 <?php
 
-function addItem($email, $item, $duedate) {
+function addItems($email, $item, $duedate) {
     global $db;
     
     $query = 'INSERT INTO todos (username, todo_item, date_due, status, date_created) '
@@ -24,6 +24,33 @@ function addItem($email, $item, $duedate) {
     }
 }
 
+function deleteItem($id) {
+    global $db;
+    
+    $query = 'DELETE FROM todos WHERE id=:id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+    $statement->closeCursor();
+    }
+
+function updateitem($id, $todoitem, $duedate, $status) {
+    global $db;
+    $query = 'UPDATE todos SET
+    todo_item = :todo_item,
+    date_due = :date_due,
+    status = :status
+    WHERE id = :id';
+    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':todo_item', $todoitem);
+    $statement->bindValue(':date_due', $duedate);
+    $statement->bindValue(':status', $status);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+    $statement->closeCursor();
+    }
+
 function getToDoItems($email) {
     global $db;
     
@@ -41,22 +68,17 @@ function getToDoItems($email) {
     }
 }
 
-function updateitem($id, $todoitem, $duedate, $status) {
-    global $db;
-    $query = 'UPDATE todos SET
-    todo_item = :todo_item,
-    date_due = :date_due,
-    status = :status,
-    WHERE id = :id';
-    
-    $statement = $db->prepare($query);
-    $statement->bindValue(':todo_item', $todoitem);
-    $statement->bindValue(':date_due', $duedate);
-    $statement->bindValue(':status', $status);
-    $statement->bindValue(':id', $id);
-    $statement->execute();
-    $statement->closeCursor();
-    }
+
+function getToDoItem($id) {
+  global $db;
+  $query = "SELECT * FROM todos WHERE id=:id"; 
+  $statement = $db->prepare($query); 
+  $statement->bindValue(':id', $id); 
+  $statement->execute();
+  $user = $statement->fetch();
+  $statement->closeCursor();
+  return $user;
+}
 
 function display_error_1($error, 
                        $tag = 'i', 
@@ -65,6 +87,8 @@ function display_error_1($error,
     $closetag = '</' . $tag . '>';
     echo $opentag . $error . $closetag;
 }
+
+
 
 ?>
 
