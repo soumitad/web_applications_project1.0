@@ -36,11 +36,22 @@ function deleteItem($id) {
 
 function updateitem($id, $todoitem, $duedate, $status) {
     global $db;
-    $query = 'UPDATE todos SET
+    
+    if($status=="COMPLETED"){
+        $query = 'UPDATE todos SET
+    todo_item = :todo_item,
+    date_due = :date_due,
+    date_completed = CURDATE(),
+    status = :status
+    WHERE id = :id';
+    }else{
+        $query = 'UPDATE todos SET
     todo_item = :todo_item,
     date_due = :date_due,
     status = :status
     WHERE id = :id';
+    }
+    
     
     $statement = $db->prepare($query);
     $statement->bindValue(':todo_item', $todoitem);

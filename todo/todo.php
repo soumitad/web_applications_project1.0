@@ -21,15 +21,18 @@ if(isset($action)){
         $items = getToDoItems($username);
     }
 }else{
-    $action=$_GET['action'];
-    if($action=="delete"){
-        $id=$_GET['id'];
-       
-        deleteItem($id);
-        $items = getToDoItems($username);
-        $action="add";
-        include('todoView.php');
+    if(isset($_GET['action'])){
+            $action=$_GET['action'];
+            if($action=="delete"){
+            $id=$_GET['id'];
+
+            deleteItem($id);
+            $items = getToDoItems($username);
+            $action="add";
+            include('todoView.php');
+        }
     }
+    
 }
 
 

@@ -54,8 +54,8 @@ require_once('todo.php');
                                                                         <label for="usr">Status:</label>
                                                                         <div class="form-group">
                                                                                 <select name="status" class="form-control" value="<?php echo $status; ?>">
-                                                                                                    <option value="one">PENDING</option>
-                                                                                                    <option value="two">COMPLETED</option>
+                                                                                                    <option value="PENDING">PENDING</option>
+                                                                                                    <option value="COMPLETED">COMPLETED</option>
                                                                                                     
                                                                                 </select>
 									<!--	<input type="text" name="status" id="status" class="form-control" value=""> -->
@@ -64,9 +64,11 @@ require_once('todo.php');
 									
 									<div class="form-group">
 										<div class="row">
+                                                                                        <div class="col-sm-2"></div>
+                                                                                            <div class="col-sm-5"><input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Save"></div>
+                                                                                            <div class="col-sm-5"><a href="todoView.php" class="form-control btn btn-warning">Cancel</a></div>
 											<div class="btn-group">
-                                                                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Save">
-                                                                                                <a href="todoView.php" class="btn btn-warning">Cancel</a>
+                               
 											</div>
 										</div>
 									</div>
