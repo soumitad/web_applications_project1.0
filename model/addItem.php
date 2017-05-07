@@ -1,10 +1,10 @@
 <?php
 
-function addItems($email, $item, $duedate) {
+function addItems($email, $item, $duedate,$time) {
     global $db;
     
-    $query = 'INSERT INTO todos (username, todo_item, date_due, status, date_created) '
-            . 'VALUES (:username, :todo, :duedate, :status, CURDATE())';
+    $query = 'INSERT INTO todos (username, todo_item, date_due, status, date_created,duedate_time) '
+            . 'VALUES (:username, :todo, :duedate, :status, CURDATE(),:time)';
     try {
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $email);
@@ -12,6 +12,7 @@ function addItems($email, $item, $duedate) {
     $statement->bindValue(':duedate', $duedate);
     //$statement->bindValue(':birthday', $dob);
     $statement->bindValue(':status', 'PENDING');
+    $statement->bindValue(':time', $time);
     //$statement->bindValue(':date_create', $duedate);
     
     $statement->execute();
@@ -34,7 +35,7 @@ function deleteItem($id) {
     $statement->closeCursor();
     }
 
-function updateitem($id, $todoitem, $duedate, $status) {
+function updateitem($id, $todoitem, $duedate, $status, $time) {
     global $db;
     
     if($status=="COMPLETED"){
@@ -42,13 +43,15 @@ function updateitem($id, $todoitem, $duedate, $status) {
     todo_item = :todo_item,
     date_due = :date_due,
     date_completed = CURDATE(),
-    status = :status
+    status = :status,
+    duedate_time = :time
     WHERE id = :id';
     }else{
         $query = 'UPDATE todos SET
     todo_item = :todo_item,
     date_due = :date_due,
-    status = :status
+    status = :status,
+    duedate_time = :time
     WHERE id = :id';
     }
     
@@ -58,6 +61,7 @@ function updateitem($id, $todoitem, $duedate, $status) {
     $statement->bindValue(':date_due', $duedate);
     $statement->bindValue(':status', $status);
     $statement->bindValue(':id', $id);
+    $statement->bindValue(':time', $time);
     $statement->execute();
     $statement->closeCursor();
     }

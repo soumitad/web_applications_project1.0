@@ -46,8 +46,8 @@
                           <tr>
                             <th>#</th>
                             <th>Item</th>
-                            <th>Date Created</th>
                             <th>Due Date</th>
+                            <th>Due Time</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -56,8 +56,8 @@
                                 <tr>
                                     <td><?php echo $item['id'];?></td>
                                     <td><?php echo $item['todo_item'];?></td>
-                                    <td><?php echo $item['date_created'];?></td>
                                     <td><?php echo $item['date_due'];?></td>
+                                    <td><?php echo $item['duedate_time'];?></td>
                                     <td><a href="addEditItem.php?action=update&id=<?php echo $item['id']?>" class="btn btn-success">Edit</a></td>
                                     <td><a href="todo.php?action=delete&id=<?php echo $item['id']?>" class="btn btn-warning">Delete</a></td>
                                 </tr>
