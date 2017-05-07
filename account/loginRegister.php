@@ -1,10 +1,13 @@
 <?php 
 /*Controller*/
 require_once('../util/main.php');
-require('../model/dbConnection.php'); 
-require('../model/db.php');
+require_once('../model/dbConnection.php'); 
+require_once('../model/db.php');
 //include('Login.php'); 
-
+$usernameErr ="";
+$passwordErr ="";
+$error= "";
+$errorMsg="";
 $action = filter_input(INPUT_POST, 'action'); 
 if($action == NULL) 
 { 
@@ -16,72 +19,41 @@ if($action == 'show_login_page')
 }else if($action == 'login') 
 { 
    // include('index23.php');
-  $username = $_POST['username']; 
-  $password = $_POST['password']; 
-  $suc = isUserValid($username,$password); 
-  if($suc == true) 
-  { 
-    //$result = getTodoItems($_COOKIE['my_id']); 
-     $userDetails = getUserDetails($username);
-     $firstname = $userDetails['first_name'];
-     $lastname = $userDetails['last_name'];
-     $_SESSION['userId'] = $username;
-     $_SESSION['first_name'] = $firstname;
-     $_SESSION['last_name'] = $lastname;
-     //include('todo/todoView.php'); 
-     redirect('../todo/todoView.php');
-  }else{ 
-    //header("Location: badInfo.php"); 
-  } 
-}/*else if ($action=='register') { 
-  //echo "We want create a new account"; 
-   //echo "test commit"
-    $firstnameErr = $lastnameErr = $emailErr = $genderErr = $passwordErr = $confpasswordErr = "";
-   
-  if(empty($_POST['firstname'])){
-      $firstnameErr = "First Name is missing";
+  $username = $_POST['username'];
+  
+  if (empty($username)){
+    $usernameErr = "Please enter a username";
+    $error = true;
+    }
+  
+  $password = $_POST['password'];
+  
+  if (empty($password)){
+    $passwordErr = "Please enter your password";
+    $error = true;
+    }
+  if(!$error){
+    $suc = isUserValid($username,$password); 
+    if($suc == true) 
+    { 
+      //$result = getTodoItems($_COOKIE['my_id']); 
+       $userDetails = getUserDetails($username);
+       $firstname = $userDetails['first_name'];
+       $lastname = $userDetails['last_name'];
+       $_SESSION['userId'] = $username;
+       $_SESSION['first_name'] = $firstname;
+       $_SESSION['last_name'] = $lastname;
+       //include('todo/todoView.php'); 
+       redirect('../todo/todoView.php');
+    }else{
+        $errorMsg = "The Username and password combination that you entered is incorrect.";
+        include('Login.php');
+    }
+  }else{
+      include('Login.php');
   }
-  if(empty($_POST['lastname'])){
-      $lastnameErr = "Last Name is missing";
-  }
-  if(empty($_POST['email'])){
-      $emailErr = "Email address will serve as your username and is mandatory";
-  }
-  if(empty($_POST['gender'])){
-      $genderErr = "Gender is missing";
-  }
-  if(empty($_POST['password'])){
-      $passwordErr = "Password is missing";
-  }
-  if(empty($_POST['confpassword'])){
-      $confpasswordErr = "Confirm Password is missing";
-  }
-  include('Register.php');
-  /*if(isset($name)) { 
-    $pass = filter_input(INPUT_POST, 'reg_password'); 
-    $exist = createUser($name, $pass); 
- 
-    if ($exist == true) { 
-      include ('user_exists.php'); 
-    } else { 
-      header("Location: index.php"); 
-    } 
- 
-  }*/ 
-/*} else if ($action == 'add') { 
-  if (isset($_POST['description']) and $_POST['description'] != '') { 
-    addTodoItem($_COOKIE['my_id'], $_POST['description']); 
-  } 
-  $result = getTodoItems($_COOKIE['my_id']); 
-  include ('list.php'); 
-} else if($action == 'delete'){ 
-  if(isset($_POST['item_id'])) { 
-    $selected = $_POST['item_id']; 
-    deleteTodoItem($_COOKIE['my_id']); 
-  }      
-  $result = getTodoItems($_COOKIE['my_id']); 
-  include ('list.php'); 
-}*/ 
+  
+}
 
 
 ?>

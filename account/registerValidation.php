@@ -101,7 +101,7 @@ if(!$error){
                       $password, $gender, $phone);
        
        if($registerationIndicator != null){
-           include ('index23.php'); 
+           header("Location: registerSuccess.php"); 
        }
     }
 }

@@ -5,7 +5,15 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
+                            <div class="row">
+                               <img src="../img/to_do_list.jpg" class="img-responsive"> 
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+            <div class="col-md-5">
                 <div class="panel panel-login">
                     <div class="panel-heading">
                         <div class="row">

@@ -126,3 +126,7 @@ hr {
    border-top: 1px solid #aaaaaa;
    border-bottom: 10px solid #ffffff;
 }
+img-responsive {
+max-width: 90%; /* or to whatever you want here */
+max-height: auto; /* or to whatever you want here */
+}
