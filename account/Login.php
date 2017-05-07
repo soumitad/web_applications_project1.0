@@ -1,4 +1,5 @@
 <?php include('../view/styleHeader.php') ?>
+<<<<<<< HEAD
 <?php 
 $usernameErr ="";
 $passwordErr ="";
@@ -6,17 +7,30 @@ $error= "";
 $errorMsg="";
 ?>
 <body> 
+=======
+
+<body>
+ 
+>>>>>>> d4aa06fcc377818127f4cdb16b3da5eb01cc00fa
   <div class="container">
     	<div class="row">
                         <div class="col-md-6">
                             <div class="row">
+<<<<<<< HEAD
                                <img src="../img/to_do_list.jpg" class="img-responsive"> 
+=======
+                               <img src="../img/to_do_login.jpg" class="img-responsive"> 
+>>>>>>> d4aa06fcc377818127f4cdb16b3da5eb01cc00fa
                             </div>
                         </div>
                         <div class="col-md-1">
 
                         </div>
 			<div class="col-md-5">
+<<<<<<< HEAD
+=======
+                            <div class="row">
+>>>>>>> d4aa06fcc377818127f4cdb16b3da5eb01cc00fa
 				<div class="panel panel-login">
 					<div class="panel-heading">
 						<div class="row">
@@ -81,6 +95,9 @@ $errorMsg="";
 						</div>
 					</div>
 				</div>
+                            
+                        </div>
+                            
 			</div>
 		</div>
 	</div> 
