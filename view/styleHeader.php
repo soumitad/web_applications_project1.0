@@ -9,7 +9,7 @@
 
         
         <script  type="text/javascript" src="../styles/appStyles.js"></script>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-offset-7">
                 <div class="row">
@@ -22,6 +22,8 @@
     </div>
 
     </head>
+    
+    <div class="container-fluid">
      <nav class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -32,6 +34,7 @@
       
     </ul>
   </div>
-</nav>  
+</nav> 
+    </div>
    
 

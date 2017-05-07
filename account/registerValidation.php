@@ -33,7 +33,7 @@ $error = true;
 }
 else
  {
-$lastname = test_input($_POST["lastname"]); // check name only contains letters and whitespace
+$lastname = test_input($_POST["lastname"]);
 if (!preg_match("/^[a-zA-Z ]*$/",$lastname))
 {
 $lastnameErr = "Only letters and white space allowed";
@@ -64,7 +64,7 @@ $error = true;
 }
 else
   {
-$gender = test_input($_POST["gender"]); // check name only contains letters and whitespace
+$gender = test_input($_POST["gender"]); 
 if (!preg_match("/^[a-zA-Z ]*$/",$gender))
 {
 $genderErr = "Only letters and white space allowed";

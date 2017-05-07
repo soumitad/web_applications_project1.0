@@ -10,6 +10,7 @@ and open the template in the editor.
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 body {
     padding-top: 90px;
+    overflow-x: hidden;
 }
 .panel-login {
 	border-color: #ccc;
@@ -129,4 +130,11 @@ hr {
 img-responsive {
 max-width: 90%; /* or to whatever you want here */
 max-height: auto; /* or to whatever you want here */
+}
+.no-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important; 
+}
+.row {
+    border: 1px solid #999;
 }

@@ -62,7 +62,13 @@
                                         <input type="text" name="birthday" id="birthday" tabindex="2" class="form-control" placeholder="Birthday">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="gender" id="gender" tabindex="2" class="form-control" placeholder="Gender">
+                                        
+                                        <select name="gender" class="form-control" value="<?php echo $gender; ?>">
+                                                                                                    <option value="" selected="selected">SELECT</option>
+                                                                                                    <option value="MALE">MALE</option>
+                                                                                                    <option value="FEMALE">FEMALE</option>
+                                                                                                    
+                                        </select>
                                         <div class="form-group has-error">
                                             <div class="controls">
                                             <span class="help-block"><?php echo $genderErr;?></span>
