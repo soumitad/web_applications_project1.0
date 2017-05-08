@@ -19,6 +19,23 @@ function isUserValid($user_id, $pass){
   
 }
 
+function isEmailExists($email){
+   global $db; 
+  $query = "SELECT 1 AS ID FROM user_profile where username=:user_id"; 
+  $statement = $db->prepare($query); 
+  $statement->bindValue(':user_id', $email); 
+  $statement->execute();
+  $userExists = $statement->fetch();
+  $statement->closeCursor();
+ 
+  if($userExists['ID'] == 1){
+      return true;
+  }else{
+      return false;
+  }  
+  
+}
+
 function getUserDetails($email){
     global $db; 
   $query = "SELECT * FROM user_profile where username=:user_id"; 
