@@ -17,7 +17,7 @@ $errorStatus=false;
 
 if(isset($action)){
     if($action=="update"){
-        display_error($id);
+        
         $todoItem = getToDoItem($id);
         $todo_item=$todoItem['todo_item'];
         $duedate=$todoItem['date_due'];

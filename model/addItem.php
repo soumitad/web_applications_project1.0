@@ -69,7 +69,7 @@ function updateitem($id, $todoitem, $duedate, $status, $time) {
 function getToDoItems($email) {
     global $db;
     
-  $query = "SELECT * FROM todos where username=:user_id"; 
+  $query = "SELECT * FROM todos where username=:user_id order by date_created"; 
   try{   
   $statement = $db->prepare($query); 
   $statement->bindValue(':user_id', $email); 

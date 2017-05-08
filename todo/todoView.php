@@ -1,25 +1,7 @@
-<?php require_once('../util/main.php'); include('../view/styleHeader.php') ?>
+<?php include('../view/styleHeader.php') ?>
 <?php include('../view/sidebar.php') ?>
+<?php include('todo_controller.php') ?>
 
-<?php
-    require_once('../model/dbConnection.php');
-    $action="add";
-    require_once('../model/addItem.php');
-    $username = $_SESSION['userId'];
-    $firstname = $_SESSION['first_name'];
-    $lastname = $_SESSION['last_name'];
-    //require('todo.php');
-     $items = getToDoItems($username);
-?>
-
-    
-       <!-- <div class="jumbotron">
-            <h2 id="navs">Voila!! World</h2>
-       <div class="page-header">
-              <h1 id="navs">Voila!!</h1>
-            </div>
-            
-        </div> -->
        <div class="col-md-8 col-md-offset-3">
            <div class="row">
                <font color="white"><h1>Hello!! <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1></font>
