@@ -13,6 +13,7 @@ $confPassword ="";
 $confpasswordErr ="";
 $genderErr ="";
 $phoneErr ="";
+$birthday;
 $birthdayErr ="";
 $error = false;
 
@@ -74,20 +75,31 @@ if(empty($_POST['password'])){
       $passwordErr = "Password is missing";
       $error = true;
   }
+  $confpassword = test_input($_POST['confpassword']);
   if(empty($_POST['confpassword'])){
       $confpasswordErr = "Please confirm your password";
       $error = true;
   }
   
-  if($password != $confPassword){
+  if($password === $confpassword){
+      //Do nothing
+  }else{
       $confpasswordErr = "Passwords and Confirm password dont match";
       $error = true;
   }
   
 $dob = test_input($_POST['birthday']);
+$new_date = date('Y-m-d', strtotime($_POST['birthday']));
 if(empty($_POST['birthday'])){
       $birthdayErr = "Birthday is missing";
       $error = true;
+  }else{
+      if(!isRealDate($_POST['birthday'])){
+          $birthdayErr = "Please enter the birthday in a valid date format using the calendar date picker";
+          $error = true;
+      }
+      
+      
   }
   
 $phone = test_input($_POST['phonenum']);
@@ -104,7 +116,7 @@ if(!$error){
         $emailErr = "Username already exists in the system, please try logging in to system or click Forgot Password";
     }else{
        $registerationIndicator = registerUser($email, $firstname, $lastname,
-                      $password, $gender, $phone);
+                      $password, $gender, $phone,$new_date);
        
        if($registerationIndicator != null){
            header("Location: registerSuccess.php"); 
@@ -119,6 +131,23 @@ if(!$error){
     $data =stripslashes($data);
     $data =htmlspecialchars($data);
     return $data;
+    }
+    
+    function isRealDate($date) 
+    { 
+        if (false === strtotime($date)) 
+        { 
+            return false;
+        } 
+        else
+        { 
+            list($year, $month, $day) = explode('-', $date); 
+            if (false === checkdate($month, $day, $year)) 
+            { 
+                return false;
+            } 
+        } 
+        return true;
     }
 
 

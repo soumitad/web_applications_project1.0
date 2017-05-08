@@ -19,12 +19,12 @@
             <div class="col-xs-8">
                 <div class="row" align="right">
                     
-                    <h1><i>Procastinate not!</i></h1>
+                    <font color="white"><h1><i>Procastinate not!</i></h1></font>
                     
                 </div> 
                 <div class="row" align="right">
                     
-                    <h3><i>-your today's to-do</i></h3>
+                    <font color="white"><h3><i>-your today's to-do</i></h3></font>
                     
                 </div> 
             </div>
@@ -33,18 +33,7 @@
 
     </head>
     
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-custom">
-            <div class="container-fluid">
-                <div class="navbar-header">
-               <!--  <a class="navbar-brand" href="#">To-DO-DO-DO</a> -->
-                </div>
-                <ul class="nav navbar-nav">
-               <!--  <li class="active"><a href="#">Home</a></li> -->
-                </ul>
-           </div>
-        </nav> 
-    </div>
+   
     <body>
     <div class="row">
         <div class="container-fluid full">

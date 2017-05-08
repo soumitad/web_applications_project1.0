@@ -18,11 +18,11 @@ function isUserEmailExists($email){
 }
 
 function registerUser($email, $first_name, $last_name,
-                      $passwordHash, $gender, $phone) {
+                      $passwordHash, $gender, $phone, $new_date) {
     global $db;
     $passwordHash1 = sha1($email . $passwordHash);
-    $query = 'INSERT INTO user_profile (username, first_name, last_name, phone, gender, passwordHash) '
-            . 'VALUES (:username, :firstname, :lastname, :phone, :gender, :password)';
+    $query = 'INSERT INTO user_profile (username, first_name, last_name, phone, gender, passwordHash, birthday) '
+            . 'VALUES (:username, :firstname, :lastname, :phone, :gender, :password, :birth)';
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $email);
     $statement->bindValue(':firstname', $first_name);
@@ -31,6 +31,7 @@ function registerUser($email, $first_name, $last_name,
     $statement->bindValue(':phone', $phone);
     $statement->bindValue(':gender', $gender);
     $statement->bindValue(':password', $passwordHash1);
+    $statement->bindValue('birth', $new_date);
     $statement->execute();
     $customer_id = $db->lastInsertId();
     $statement->closeCursor();

@@ -1337,7 +1337,8 @@ mark,
   color: #777;
 }
 .text-primary {
-  color: #337ab7;
+  
+  color:#FFFFFF;
 }
 a.text-primary:hover,
 a.text-primary:focus {

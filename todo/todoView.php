@@ -22,7 +22,7 @@
         </div> -->
        <div class="col-md-8 col-md-offset-3">
            <div class="row">
-               <h1>Hello <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1>
+               <font color="white"><h1>Hello!! <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1></font>
                
            </div> 
            <hr/>
