@@ -11,6 +11,12 @@ and open the template in the editor.
 body {
     padding-top: 90px;
     overflow-x: hidden;
+    background-color: black;
+    background: url(../img/todo_background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .panel-login {
 	border-color: #ccc;
@@ -476,7 +482,15 @@ max-height: auto; /* or to whatever you want here */
 
 .navbar-custom {
     color: #4286f4;
-    background-color: #328FAD;
+    background-color: #DFE4E6;
+}
+.full {
+    background: url('../img/todo_background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
 }
 
 

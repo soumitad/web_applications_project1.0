@@ -2,19 +2,17 @@
 <html>
     <head>
         <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../styles/appStyle.css">       
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
         
-        <link rel="stylesheet" href="../styles/appStyle.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script  type="text/javascript" src="../styles/bootstrap/js/bootstrap.min.js"></script>
-
         
-        <script  type="text/javascript" src="../styles/appStyles.js"></script>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4">
                 <div class="parent">
                     
-                    <img src="../img/to_do_logo.jpg" class="img-responsive" align="left"> 
+                    <!--<img src="../img/to_do_logo.jpg" class="img-responsive" align="left"> -->
                     
                 </div> 
             </div>
@@ -49,6 +47,6 @@
     </div>
     <body>
     <div class="row">
-        <div class="container-fluid">
+        <div class="container-fluid full">
    
 
