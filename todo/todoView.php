@@ -1,14 +1,6 @@
 <?php include('../view/styleHeader.php') ?>
 <?php include('../view/sidebar.php') ?>
-<?php 
-
-    $action="add";
-    require_once('../model/itemsDb.php');
-    $username = $_SESSION['userId'];
-    $firstname = $_SESSION['first_name'];
-    $lastname = $_SESSION['last_name'];
-    //require('todo.php');
-     $items = getToDoItems($username);
+<?php include('todo_controller.php') 
 
 ?>
 
