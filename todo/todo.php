@@ -112,8 +112,6 @@ if(isset($_POST['item-submit'])) {
                 $$time_err="Please enter due time in valid format (HH:MM)";
                 $error=true;
             }*/
-        }
-       
         if(!$error){
             
             $insertStatus = addItems($username, $item, $new_date, $time); 
@@ -124,6 +122,9 @@ if(isset($_POST['item-submit'])) {
             redirect('todoView.php');
             }
         }
+        }
+       
+        
     
     
     
