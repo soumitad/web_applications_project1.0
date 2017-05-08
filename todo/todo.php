@@ -71,16 +71,14 @@ if(isset($_POST['item-submit'])) {
             $time_err = "Due time is mandatory";
             $error=true;
         }/*else{
-            display_error("Time validation");
             $timeErr = isValidTime($time);
             if(!$timeErr){
                 $$time_err="Please enter due time in valid format (HH:MM)";
                 $error=true;
-            }*/
-        }
+            }
+        }*/
         
         if(!$error){
-            display_error("Control is about to update");
             updateitem($id,$todo_item,$date_due,$status,$time);
             
             //display_error($todo_item);
@@ -111,7 +109,9 @@ if(isset($_POST['item-submit'])) {
             if(!$timeErr){
                 $$time_err="Please enter due time in valid format (HH:MM)";
                 $error=true;
-            }*/
+            }
+        }*/
+       
         if(!$error){
             
             $insertStatus = addItems($username, $item, $new_date, $time); 
@@ -122,13 +122,9 @@ if(isset($_POST['item-submit'])) {
             redirect('todoView.php');
             }
         }
-        }
-       
-        
+    }
     
-    
-    
-
+}
 
 
 
