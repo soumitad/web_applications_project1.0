@@ -31,21 +31,6 @@ function redirect($url) {
     exit;
 }
 
-function isValidTime($timeStr){
- -
- -    $dateObj = DateTime::createFromFormat('d.m.Y H:i', "10.10.2010 " . $timeStr);
- -    $dateObjOffset = DateTime::createFromFormat('d.m.Y H:i', "10.10.2010 " . '24:00');
- -
- -    if($dateObjOffset <= $dateObj){
- -        return false;
- -    }
- -    if ($dateObj !== false) {
- -       return true;
- -    }
- -    else{
- -       return false;
- -    }
- -}
 
 // Start session to store user and cart data
 session_start();
