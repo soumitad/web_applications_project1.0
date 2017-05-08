@@ -1,7 +1,7 @@
 <?php
 require_once('../util/main.php');
 require_once('../model/dbConnection.php');
-require_once('../model/addItem.php');
+require_once('../model/itemsDb.php');
 require_once('../model/db.php');
 $item = "";
 

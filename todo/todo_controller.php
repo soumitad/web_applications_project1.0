@@ -2,7 +2,7 @@
     require_once('../util/main.php'); 
     require_once('../model/dbConnection.php');
     $action="add";
-    require_once('../model/addItem.php');
+    require_once('../model/itemsDb.php');
     $username = $_SESSION['userId'];
     $firstname = $_SESSION['first_name'];
     $lastname = $_SESSION['last_name'];
