@@ -1,8 +1,6 @@
 <?php include('../view/styleHeader.php') ?>
 <?php include('../view/sidebar.php') ?>
-<?php include('todo_controller.php') 
-
-?>
+<?php include('todo_controller.php') ?>
 
        <div class="col-md-8 col-md-offset-3">
            <div class="row">
