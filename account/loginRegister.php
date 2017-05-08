@@ -36,7 +36,11 @@ if(isset($_POST['login-submit'])) {
         $error = true;
         }
       if(!$error){
-        $suc = isUserValid($username,$password); 
+        $isValidUser = isEmailExists($username);
+        if(!$isValidUser){
+          $errorMsg = "The Username you entered does not match with any records present in the system.";
+        }else{
+          $suc = isUserValid($username,$password); 
         if($suc == true) 
         { 
           //$result = getTodoItems($_COOKIE['my_id']); 
@@ -52,6 +56,8 @@ if(isset($_POST['login-submit'])) {
             $errorMsg = "The Username and password combination that you entered is incorrect.";
             //include('Login.php');
         }
+        }
+        
       }/*else{
           include('Login.php');
       }*/
