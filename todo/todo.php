@@ -70,13 +70,13 @@ if(isset($_POST['item-submit'])) {
         if($time==null){
             $time_err = "Due time is mandatory";
             $error=true;
-        }else{
+        }/*else{
             display_error("Time validation");
             $timeErr = isValidTime($time);
             if(!$timeErr){
                 $$time_err="Please enter due time in valid format (HH:MM)";
                 $error=true;
-            }
+            }*/
         }
         
         if(!$error){
@@ -106,12 +106,12 @@ if(isset($_POST['item-submit'])) {
         if($time==null){
             $time_err = "Due time is mandatory";
             $error=true;
-        }else{
+        }/*else{
             $timeErr = isValidTime($time);
             if(!$timeErr){
                 $$time_err="Please enter due time in valid format (HH:MM)";
                 $error=true;
-            }
+            }*/
         }
        
         if(!$error){
