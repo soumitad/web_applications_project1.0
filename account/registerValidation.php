@@ -9,8 +9,11 @@ $lastnameErr ="";
 $emailErr ="";
 $passwordErr ="";
 $password ="";
+$confPassword ="";
 $confpasswordErr ="";
 $genderErr ="";
+$phoneErr ="";
+$birthdayErr ="";
 $error = false;
 
 if(isset($_POST['register-submit'])) { // Checking null values in message.
@@ -57,37 +60,40 @@ $error = true;
 }
 } 
 
-if (empty($_POST["gender"]))
-{
-$genderErr = "Gender is mandatory";
-$error = true;
-}
-else
-  {
+
 $gender = test_input($_POST["gender"]); 
-if (!preg_match("/^[a-zA-Z ]*$/",$gender))
+if ($gender=="")
 {
-$genderErr = "Only letters and white space allowed";
+$genderErr = "Please select the gender from the drop down list";
 $error = true;
 }
-}
+
 
 $password = test_input($_POST['password']);
 if(empty($_POST['password'])){
       $passwordErr = "Password is missing";
+      $error = true;
   }
   if(empty($_POST['confpassword'])){
       $confpasswordErr = "Please confirm your password";
+      $error = true;
   }
   
-/*$dob = test_input($_POST['birthday']);
+  if($password != $confPassword){
+      $confpasswordErr = "Passwords and Confirm password dont match";
+      $error = true;
+  }
+  
+$dob = test_input($_POST['birthday']);
 if(empty($_POST['birthday'])){
-      $passwordErr = "Birthday is missing";
-  }*/
+      $birthdayErr = "Birthday is missing";
+      $error = true;
+  }
   
 $phone = test_input($_POST['phonenum']);
 if(empty($_POST['phonenum'])){
-      $passwordErr = "Phone number is missing";
+      $phoneErr = "Phone number is missing";
+      $error = true;
   }  
   
 

@@ -9,12 +9,24 @@
 
         
         <script  type="text/javascript" src="../styles/appStyles.js"></script>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 col-md-offset-7">
-                <div class="row">
+            <div class="col-xs-4">
+                <div class="parent">
                     
-                    <h1><i>What you can do tommorrow, do it now!</i></h1>
+                    <img src="../img/to_do_logo.jpg" class="img-responsive" align="left"> 
+                    
+                </div> 
+            </div>
+            <div class="col-xs-8">
+                <div class="row" align="right">
+                    
+                    <h1><i>Procastinate not!</i></h1>
+                    
+                </div> 
+                <div class="row" align="right">
+                    
+                    <h3><i>-your today's to-do</i></h3>
                     
                 </div> 
             </div>
@@ -24,17 +36,19 @@
     </head>
     
     <div class="container-fluid">
-     <nav class="navbar navbar-default">
-    <div class="container-fluid">
-    <div class="navbar-header">
-    <!--  <a class="navbar-brand" href="#">To-DO-DO-DO</a> -->
+        <nav class="navbar navbar-default navbar-custom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+               <!--  <a class="navbar-brand" href="#">To-DO-DO-DO</a> -->
+                </div>
+                <ul class="nav navbar-nav">
+               <!--  <li class="active"><a href="#">Home</a></li> -->
+                </ul>
+           </div>
+        </nav> 
     </div>
-    <ul class="nav navbar-nav">
-    <!--  <li class="active"><a href="#">Home</a></li> -->
-      
-    </ul>
-  </div>
-</nav> 
-    </div>
+    <body>
+    <div class="row">
+        <div class="container-fluid">
    
 

@@ -1,9 +1,9 @@
 <?php include('../view/styleHeader.php') ?>
 <?php include('registerValidation.php') ?>
 
-<body> 
+
     
-    <div class="container">
+    
         <div class="row">
             <div class="col-md-6">
                             <div class="row">
@@ -57,9 +57,19 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="phonenum" id="phonenum" tabindex="2" class="form-control" placeholder="Phone Number">
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $phoneErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="birthday" id="birthday" tabindex="2" class="form-control" placeholder="Birthday">
+                                        <input type="date" name="birthday" id="birthday" tabindex="2" class="form-control" placeholder="Birthday">
+                                        <div class="form-group has-error">
+                                            <div class="controls">
+                                            <span class="help-block"><?php echo $birthdayErr;?></span>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div class="form-group">
                                         
@@ -98,14 +108,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </form> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</form> 
-</body> 
+    
+
+ 
 
 <?php include('../view/styleFooter.php') ?>

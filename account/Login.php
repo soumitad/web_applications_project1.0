@@ -1,14 +1,5 @@
-<?php include('../view/styleHeader.php') ?>
+<?php include('../view/styleHeader.php'); include ('loginRegister.php'); ?>
 
-<?php 
-$usernameErr ="";
-$passwordErr ="";
-$error= "";
-$errorMsg="";
-?>
-<body> 
-
-  <div class="container">
     	<div class="row">
                         <div class="col-md-6">
                             <div class="row">
@@ -17,10 +8,8 @@ $errorMsg="";
 
                             </div>
                         </div>
-                        <div class="col-md-1">
-
-                        </div>
-			<div class="col-md-5">
+                       
+			<div class="col-md-6">
 
                             <div class="row">
 
@@ -39,7 +28,7 @@ $errorMsg="";
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-                                                            <form id="login-form" action="loginRegister.php" method="post" role="form" style="display: block;">
+                                                            <form id="login-form" action="Login.php" method="post" role="form" style="display: block;">
                                                                 <div class="form-group has-error">
                                                                                     <div class="controls">
                                                                                         <span class="help-block"><?php echo $errorMsg;?></span>
@@ -93,7 +82,7 @@ $errorMsg="";
                             
 			</div>
 		</div>
-	</div> 
-</body> 
+	
+
  
 <?php include('../view/styleFooter.php') ?>

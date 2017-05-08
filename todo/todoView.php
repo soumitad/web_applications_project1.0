@@ -1,7 +1,7 @@
-<?php include('../view/styleHeader.php') ?>
+<?php require_once('../util/main.php'); include('../view/styleHeader.php') ?>
+<?php include('../view/sidebar.php') ?>
 
 <?php
-    require_once('../util/main.php');
     require_once('../model/dbConnection.php');
     $action="add";
     require_once('../model/addItem.php');
@@ -11,8 +11,8 @@
     //require('todo.php');
      $items = getToDoItems($username);
 ?>
-<body> 
-    <div class="container">
+
+    
        <!-- <div class="jumbotron">
             <h2 id="navs">Voila!! World</h2>
        <div class="page-header">
@@ -20,22 +20,33 @@
             </div>
             
         </div> -->
-       <div class="col-lg-12">
+       <div class="col-md-8 col-md-offset-3">
            <div class="row">
-               <h1>Voila!!! Hello <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1>
+               <h1>Hello <?php echo $firstname;?><?php echo " "?><?php echo $lastname;?></h1>
                
            </div> 
            <hr/>
        </div>
        <div class="row">
-           <div class="col-xs-6 col-md-4">
+           <div class="col-md-8 col-md-offset-3">
                
                <a href="addEditItem.php?userid=<?php echo $username;?>&action=add" class="btn btn-success">+ Add a New Item</a>
                <br/>   
            </div>
+           <br/>
+       </div>
+       <div class="row">
+           <div class="col-lg-12">
+               
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-12">
+               
+           </div>
        </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 col-md-offset-3">
                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">List of Incomplete To-Do Items:</h3>
@@ -44,7 +55,7 @@
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>#</th>
+                           <!-- <th>#</th> -->
                             <th>Item</th>
                             <th>Due Date</th>
                             <th>Due Time</th>
@@ -54,7 +65,7 @@
                             <?php foreach ($items as $item) : ?>
                               <?php if ($item['status'] == "PENDING"): ?>
                                 <tr>
-                                    <td><?php echo $item['id'];?></td>
+                                 <!--   <td></td> -->
                                     <td><?php echo $item['todo_item'];?></td>
                                     <td><?php echo $item['date_due'];?></td>
                                     <td><?php echo $item['duedate_time'];?></td>
@@ -72,7 +83,7 @@
         </div>
        
        <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 col-md-offset-3">
                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Completed Items:</h3>
@@ -109,7 +120,7 @@
        
 
        
-    </div>
-</body>    
+    
+    
 
 <?php include('../view/styleFooter.php') ?>

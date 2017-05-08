@@ -86,7 +86,7 @@ if(isset($_POST['item-submit'])) {
         }
         
     }else{
-        display_error("CAdd control");
+        
         $item = $_POST['itemName'];
         $duedate = $_POST['dueDate'];
         $new_date = date('Y-m-d', strtotime($_POST['dueDate']));
@@ -113,7 +113,7 @@ if(isset($_POST['item-submit'])) {
         }
        
         if(!$error){
-            display_error("No Error");
+            
             $insertStatus = addItems($username, $item, $new_date, $time); 
             if($insertStatus != null) 
             {
@@ -126,31 +126,7 @@ if(isset($_POST['item-submit'])) {
     
 }
 
-function validateUserInputs($todo_item,$date_due,$time){
-    display_error("Validation here");
-    $error=false;
-    if($todo_item == null){
-       $GLOBALS['$todoItem_err'] = "Please enter a To-DO Item";
-        $error = true;
-    }
-    if($date_due){
-        $GLOBALS['$duedate_err'] = "Please enter a due date";
-        $error=true;
-    }
-    if($time==null){
-        $GLOBALS['$time_err'] = "Due time is mandatory";
-        $error=true;
-    }else{
-        $timeErr = isValidTime($time);
-        if(!$timeErr){
-            $GLOBALS['$time_err']="Please enter due time in valid format (HH:MM)";
-            $error=true;
-        }
-    }
-    display_error($GLOBALS['$todoItem_err']);
-    display_error($GLOBALS['$time_err']);
-    return $error;
-}
+
 
 
 ?>
