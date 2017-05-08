@@ -71,6 +71,7 @@ if(isset($_POST['item-submit'])) {
             $time_err = "Due time is mandatory";
             $error=true;
         }else{
+            display_error("Time validation");
             $timeErr = isValidTime($time);
             if(!$timeErr){
                 $$time_err="Please enter due time in valid format (HH:MM)";
@@ -79,6 +80,7 @@ if(isset($_POST['item-submit'])) {
         }
         
         if(!$error){
+            display_error("Control is about to update");
             updateitem($id,$todo_item,$date_due,$status,$time);
             
             //display_error($todo_item);
