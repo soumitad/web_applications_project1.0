@@ -124,9 +124,10 @@ if(isset($_POST['item-submit'])) {
             redirect('todoView.php');
             }
         }
-    }
     
-}
+    
+    
+
 
 
 
